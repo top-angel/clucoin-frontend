@@ -1,0 +1,232 @@
+.Charity {
+  padding: 20px;
+  @include BorderRadius(20px);
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  @media only screen and (min-width: 1268px) {
+    margin: 170px 0;
+    padding-top: 90px;
+  }
+  @media only screen and (max-width: 968px) {
+    margin-top: 40px;
+  }
+  margin-bottom: 0 !important;
+
+  &::before {
+    @include BoxEffect;
+  }
+  .CharityHeader {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    padding: 20px;
+    border-radius: 30px;
+    background: inherit;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    border: 2px solid $BorderColor;
+    max-width: 800px;
+    padding-bottom: 40px;
+    margin: auto;
+
+    @media only screen and (min-width: 1268px) {
+      max-width: 567px;
+      position: absolute;
+      width: 100%;
+      top: -119px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .Title {
+      font-family: "GoodTimes";
+      font-size: 52px;
+      text-align: center;
+      color: #ef008e;
+      @media only screen and (max-width: 968px) {
+        font-size: 24px;
+      }
+    }
+    .Description {
+      text-align: center;
+      font-size: 18px;
+      @media only screen and (max-width: 968px) {
+        font-size: 14px;
+      }
+      color: #ffffff;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 2000px rgb(58, 58, 58, 58%);
+      filter: blur(10px);
+      margin: -20px;
+    }
+  }
+  .CharityBody {
+    .CharityDescription {
+      font-size: 20px;
+      text-align: center;
+      color: #ffffff;
+      @media only screen and (max-width: 968px) {
+        font-size: 14px;
+      }
+      span {
+        color: #ef008e;
+      }
+    }
+    .CharityGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 100px;
+      padding: 0 60px;
+      @media only screen and (max-width: 968px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        padding: 0 40px;
+      }
+      @media only screen and (max-width: 668px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        padding: 0 20px;
+      }
+      margin: 40px 0;
+      .CharityEvent {
+        position: relative;
+        border-radius: 15px;
+        cursor: pointer;
+        border: 1px solid #3a3c44;
+        background-color: #1e1f24;
+        min-height: 250px;
+        max-height: 250px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        img {
+          max-width: 100%;
+          object-fit: cover;
+          width: max-content;
+          height: max-content;
+          filter: brightness(0.9);
+
+          min-height: 100%;
+        }
+        svg {
+          position: absolute;
+          top: 7px;
+          right: 7px;
+          z-index: 1;
+          opacity: 0.5;
+        }
+      }
+      .Selected {
+        border: 2px solid #ef008e;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(
+            circle,
+            #ef008e -8%,
+            rgba(30, 31, 36, 0) 51%
+          );
+          bottom: 0;
+          top: 151px;
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+    .CharityFooter {
+      width: fit-content;
+      margin: 0 auto;
+
+      .ConfirmVote {
+        background-color: #ef008e;
+        border-radius: 28px;
+        color: white;
+        border: none;
+        font-weight: 600;
+        min-width: 150px;
+        min-height: 45px;
+        cursor: pointer;
+        display: -moz-box;
+        display: flex;
+        -moz-box-align: center;
+        align-items: center;
+        -moz-box-pack: center;
+        justify-content: center;
+        font-size: 16px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.WhoHelped {
+  padding: 20px;
+  @include BorderRadius(20px);
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+  &::before {
+    @include BoxEffect;
+  }
+  p {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .CharityGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    padding: 0 60px;
+    @media only screen and (max-width: 968px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px;
+      padding: 0 40px;
+    }
+    @media only screen and (max-width: 668px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+      padding: 0 20px;
+    }
+    margin: 40px 0;
+    .CharityEvent {
+      cursor: pointer;
+      position: relative;
+      border-radius: 15px;
+      border: 1px solid #3a3c44;
+      background-color: #1e1f24;
+      min-height: 250px;
+      max-height: 250px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      img {
+        max-width: 100%;
+        object-fit: cover;
+        width: max-content;
+        height: max-content;
+        filter: brightness(0.9);
+
+        min-height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.Profile {
+  background: $BoxColor;
+  padding: 20px;
+  @include BorderRadius(20px);
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .avatar {
+    @include BorderRadius(50px);
+  }
+}
+
+.ProfileHeading {
+  > p {
+    text-align: center;
+  }
+}
+
+.NFTCollection {
+  background: $BoxColor;
+  padding: 20px;
+  @include BorderRadius(20px);
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+  min-height: 200px;
+
+  .nft {
+    @include BorderRadius(30px);
+    padding: 20px;
+  }
+}
+
+.NFTBadges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 25px;
+  img {
+    margin: 0 10px;
+  }
+}
+
+.NFTBoxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  @media only screen and (min-width: 320px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media only screen and (min-width: 350px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 668px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 968px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media only screen and (min-width: 1360px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .NFTBox {
+    background: #1e1f24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid #676679;
+    height: 300px;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    &:hover {
+      border-color: #ef008e;
+      border-width: 2px;
+    }
+    img {
+      width: max-content;
+      height: max-content;
+      object-fit: cover;
+      max-width: 100%;
+    }
+  }
+
+  .NFTBox a {
+    display: flex;
+  }
+}

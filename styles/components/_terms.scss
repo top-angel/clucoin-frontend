@@ -1,0 +1,55 @@
+.TermsBox {
+    padding: 20px;
+    @include BorderRadius(20px);
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+    .TermsHeader {
+        margin: auto;
+        text-align: center;
+        margin-bottom: 40px;
+        .TitleTerms {
+            text-align: center;
+            font-family: "GoodTimes";
+            color: #ffffff;
+            line-height: 1.4;
+            @media only screen and (max-width: 568px) {
+                font-size: 24px;
+            }  
+        }
+    }
+
+    .text-info {
+        text-decoration: none;
+        color: $Purple;
+    }
+
+    &::before {
+        @include BoxEffect;
+    }
+    h6,p {
+        margin: 0;
+    }
+    p {
+        font-size: 14px;
+    }
+    h2,h3 {
+        color: $Purple;
+        font-family: "GoodTimes";
+        font-size: 15px;
+    }
+    .font-weight-bold {
+        color: $MainTextColor;
+        font-weight: 600;
+    }
+    .list-unstyled {
+        list-style: none;
+        padding-inline-start: 0;
+        ul {
+            list-style: none;
+            padding-inline-start: 0;
+        }
+    }
+}

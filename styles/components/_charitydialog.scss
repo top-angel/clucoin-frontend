@@ -1,0 +1,81 @@
+.CharityModalBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: #000000e0;
+
+  .CloseModal {
+    margin-left: auto;
+    display: block;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .CharityModal {
+    width: 100%;
+    max-width: 768px;
+    margin: 20px auto;
+    height: 100%;
+    border-radius: 10px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .CharityModalHeader {
+      height: 250px;
+      max-height: 250px;
+      border-radius: 10px 10px 0 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px 10px 0 0;
+      }
+    }
+
+    .CharityModalBody {
+      background: #1C1C1C;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+
+      .CharityBodyTitle {
+        margin-bottom: 20px;
+
+        .CharityTitle {
+          font-family: "GoodTimes";
+          color: #ef008e;
+          margin: 0;
+          font-size: 24px;
+        }
+      }
+
+      .CharityDescription {
+        p {
+          line-height: 1.8em;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

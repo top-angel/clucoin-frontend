@@ -1,0 +1,60 @@
+.ToggleAllWalletsBtn {
+    label {
+        display: block;
+        width: 54px;
+        height: 32px;
+        margin: 0px auto;
+        border-radius: 100px;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        background-color: #E6E9EC;
+        cursor: pointer;
+      }
+      
+      input {
+        display: none;
+      }
+      
+      
+      /* The toggle */
+      
+      i {
+        height: 28px;
+        width: 28px;
+        background: #ffffff;
+        display: inline-block;
+        border-radius: 100px;
+        margin-top: 2px;
+        margin-left: 2px;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        pointer-events: none;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      }
+      
+      label:hover>i {
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
+        transform: scale(1.01);
+      }
+      
+      input:checked+label>i {
+        margin-left: 24px;
+      }
+      
+      label:active {
+        background-color: #A6B9CB;
+      }
+      
+      label:active>i {
+        width: 34px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+      }
+      
+      input:checked+label:active>i {
+        margin-left: 18px;
+      }
+      
+      input:checked+label {
+        background-color: #EF008E;
+      }
+}

@@ -1,0 +1,73 @@
+// Setting border radius for a specific element
+
+@mixin BorderRadius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin PaddingBoxes {
+	padding: 15px 0;
+}
+
+@mixin Transitions($type) {
+	transition: all 0.2s $type;
+}
+
+@mixin TransparentButtonWithBorder {
+	color: $MainTextColor;
+	background: rgba(255, 0, 140, 0.2);
+	border: 2px solid $MainColor;
+}
+
+@mixin GradientButton {
+	color: $MainTextColor;
+	background: $MainColor;
+	font-size: $Medium_OpenSans_Buttons_FontSize;
+}
+
+@mixin BoxEffect {
+	content: "";
+    position: absolute;
+    background: #1C1C1C;
+    mix-blend-mode: overlay;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+$Hero_Big_GoodTimes_FontSize: 48px;
+$Big_GoodTimes_FontSize: 48px;
+$Medium_GoodTimes_20PX: 20px;
+$Medium_GoodTimes_FontSize: 18px;
+$Small_GoodTimes_FontSize: 14px;
+
+$Big_OpenSans_FontSize: 20px;
+$Medium_OpenSans_Buttons_FontSize: 18px;
+$Medium_OpenSans_FontSize: 16px;
+$Small_OpenSans_FontSize: 14px;
+
+$Social_Media_FontSize: 16px;
+// Color settings
+
+$PartnersBackground: #16181D;
+$DarkBox: #151519;
+$NavColor: #1E1F24;
+$BodyBackground: #1E1F24;
+$HighlightColor: #ff89cf;
+$BoxColor: #2C2D34;
+$HeaderProfileButton: #292232;
+$MainColor: #ef008e;
+$MainTextColor: #ffffff;
+$TextColor: #CFCEE6;
+$SuccessColor: #0ec674;
+$ErrorColor: #dc313d;
+$BorderColor: #676679;
+$Orange: #FF6F50;
+$Purple: #FF50B8;

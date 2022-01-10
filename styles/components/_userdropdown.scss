@@ -1,0 +1,70 @@
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown-content {
+  min-width: 150px;
+  position: absolute;
+  top: 50px;
+  transform: translateX(-50%);
+  background: #1a1b1e;
+  box-shadow: 1px -8px 54px #eb018c14;
+  padding: 10px;
+  z-index: 999;
+  @include BorderRadius(10px);
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    background: #1a1b1e;
+    width: 15px;
+    height: 15px;
+    right: 17px;
+    transform: rotate(45deg);
+  }
+
+  > p {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    transition: all 0.15s ease-out;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin: 0;
+    &:hover {
+      background: rgba(255, 0, 140, 0.2);
+      border: 2px solid #ef008e;
+      color: #ff50b8;
+    }
+    svg {
+      margin-right: 10px;
+      color: #ff50b8;
+    }
+  }
+
+  .Connector {
+    display: grid;
+    grid-template-columns: minmax(50px, 60px) minmax(150px, 250px);
+    align-items: center;
+    border-top: 1px solid #2d2d33;
+    cursor: pointer;
+
+    &:first-child {
+      border: none;
+    }
+
+    .ConnectorIcon {
+      svg,
+      img {
+        max-width: 40px;
+      }
+    }
+
+    .ConnectorName {
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
+}

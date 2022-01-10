@@ -1,0 +1,360 @@
+@use 'sass:math';
+$transition: 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$color_checkbox_success: #ef008e;
+$color_checkbox_default: #8e8e93;
+$width: 4em;
+$height: math.div($width, 2);
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.45);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  pointer-events: all;
+  transition: all 0.3s;
+  div:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  & > div {
+    width: calc(100% - 40px);
+    @media only screen and (min-width: 1160px) {
+      width: 968px;
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    @media only screen and (max-width: 768px) {
+      padding: 1.5em;
+    }
+    background-color: #151519;
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    margin: 0;
+    padding-bottom: 15px;
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+      padding-bottom: 7.5px;
+      margin-top: 15px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 175px;
+      height: 1px;
+      background: #676679;
+      left: 50%;
+      transform: translateX(-50%);
+      @media only screen and (max-width: 768px) {
+        width: 150px;
+      }
+    }
+  }
+}
+
+.modal-username,
+.modal-email {
+  display: grid;
+  grid-template-columns: minmax(50px, 125px) minmax(200px, 300px);
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #ffffff;
+    margin: 0;
+    text-align: right;
+    @media only screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.modal-username {
+  .ErrorInput {
+    display: none;
+  }
+}
+
+.ErrorInputActive {
+  position: relative;
+  margin-bottom: 30px !important;
+  input {
+    border-color: #e91e63;
+  }
+
+  .ErrorInput {
+    display: block;
+    position: absolute;
+    bottom: -24px;
+    font-size: 12px;
+    left: 50%;
+    color: #e91e63;
+    transform: translateX(-50%);
+  }
+}
+
+.modal-username,
+.modal-newsletter {
+  margin-top: 33px;
+}
+
+.modal-close {
+  color: #fff3;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 18px;
+  text-align: center;
+  top: 11px;
+  text-decoration: none;
+  font-size: 16px;
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}
+
+small {
+  color: lightgray;
+}
+
+.modal-info {
+  color: #24ffeb;
+}
+
+.modal-save {
+  & > button {
+    color: #ffffff;
+    background: rgba(255, 0, 140, 0.2);
+    border: 2px solid #ef008e;
+    color: #ff50b8;
+    padding: 8px 50px;
+    border-radius: 40px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      padding: 8px 40px;
+    }
+  }
+}
+
+.modal-term,
+.modal-newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-term {
+  margin: 33px 0 !important;
+  @media only screen and (max-width: 768px) {
+    margin: 20px 0 !important;
+  }
+  a {
+    text-decoration: none;
+    color: #9c9caf;
+    margin: 0;
+    display: inline-block;
+  }
+  p {
+    color: #71717c;
+    margin: 0;
+    font-size: 14px;
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
+      line-height: 1.3;
+      text-align: left;
+    }
+  }
+  .terms-checkbox {
+    margin-right: 20px;
+    @media only screen and (max-width: 768px) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.modal-newsletter {
+  .NewsLetterTitle {
+    color: #cfcee6;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    margin-right: 20px;
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.modal-input {
+  margin-left: 20px;
+  border-radius: 40px;
+  padding: 6px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #676679;
+  color: #b9b8cd;
+  outline: none;
+  font-size: 14px;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+  &::placeholder {
+    color: #b9b8cd;
+  }
+}
+
+.toggle {
+  .toggle-control {
+    transition: $transition;
+    width: $width;
+    height: $height;
+    display: block;
+    border: 2px solid $color_checkbox_default;
+    border-radius: $height;
+    background-color: rgba(black, 0.06);
+    position: relative;
+    cursor: pointer;
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+    &:after {
+      transition: $transition;
+      content: "";
+      width: math.div($width, 2);
+      height: $height;
+      @media only screen and (max-width: 768px) {
+        width: 1.5em;
+        height: 1.5em;
+        top: 0px;
+      }
+      display: block;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 1px 2px rgba(black, 0.4), 0 3px 2px rgba(black, 0.4);
+      position: absolute;
+      top: -2px;
+      left: 0;
+    }
+  }
+
+  input {
+    display: none;
+    &:checked + .toggle-control {
+      border-color: $color_checkbox_success;
+      background-color: $color_checkbox_success;
+      &:after {
+        left: math.div($width, 2);
+      }
+    }
+  }
+}
+
+.terms-checkbox,
+.checkbox {
+  --border-default: #676679;
+  --border-hover: #9898a3;
+  --active: #ef008e;
+  --active-tick: #ffffff;
+  display: block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  svg {
+    display: block;
+    position: absolute;
+  }
+  input {
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    box-shadow: inset 0 0 0 1.5px var(--border, var(--border-default));
+    background: var(--background, transparent);
+    transition: background 0.25s linear, box-shadow 0.25s linear;
+    & + svg {
+      width: 21px;
+      height: 22px;
+      left: 0;
+      top: 0;
+      color: var(--active);
+      .tick {
+        stroke-dasharray: 20;
+        stroke-dashoffset: var(--stroke-dashoffset, 20);
+        transition: stroke-dashoffset 0.2s;
+        &.mask {
+          stroke: var(--active-tick);
+        }
+      }
+      & + svg {
+        width: 11px;
+        height: 11px;
+        fill: none;
+        stroke: var(--active);
+        stroke-width: 1.25;
+        stroke-linecap: round;
+        top: -6px;
+        right: -10px;
+        stroke-dasharray: 4.5px;
+        stroke-dashoffset: 13.5px;
+        pointer-events: none;
+        animation: var(--animation, none) 0.2s ease 0.175s;
+      }
+    }
+    &:checked {
+      --background: var(--active);
+      --border: var(--active);
+      & + svg {
+        --stroke-dashoffset: 0;
+        & + svg {
+          --animation: check;
+        }
+      }
+    }
+  }
+  &:hover {
+    input {
+      &:not(:checked) {
+        --border: var(--border-hover);
+      }
+    }
+  }
+}
+
+@keyframes check {
+  100% {
+    stroke-dashoffset: 4.5px;
+  }
+}

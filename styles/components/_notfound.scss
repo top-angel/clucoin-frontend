@@ -1,0 +1,24 @@
+.NotFound {
+    background: $BoxColor;
+    padding: 20px;
+    @include BorderRadius(20px);
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+        font-family: "GoodTimes";
+        color: $MainColor;
+    }
+
+    h4 {
+        color: $TextColor;
+
+    }
+}

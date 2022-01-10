@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    app: postgres
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_USER
+          value: test
+        - name: POSTGRES_PASSWORD
+          value: test
+        - name: POSTGRES_DB
+          value: test
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "100m"
+      ports:
+        - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: auth
+  labels:
+    name: auth
+spec:
+  containers:
+    - name: auth
+      image: ghcr.io/clucoininc/authservice:main-712d1ce
+      env:
+        - name: POSTGRES_URI
+          value: postgres://test:test@postgres.test.svc.cluster.local:5432/test
+        - name: AVGEN_BASE_URL
+          value: http://avgen-service.default.svc.cluster.local:8000/
+        - name: NFT_DEPLOYER_URL
+          value: http://main-nft-deployer.default.svc.cluster:8050/
+      envFrom:
+        - secretRef:
+            name: secret-key
+        - secretRef:
+            name: bscscan-secret
+        - secretRef:
+            name: redis-uri
+        - secretRef:
+            name: main-auth-api-secret
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "100m"
+      ports:
+        - containerPort: 8000

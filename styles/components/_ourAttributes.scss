@@ -1,0 +1,54 @@
+////////////// NAVAIGATION //////////////
+// #1 HEADER
+//   -- HEADER NAVIGATION
+//      -- HEADER HERO
+
+.OurAttributes {
+    text-align: center;
+
+    .Container {
+        .Title {
+            color: $MainTextColor;
+            font-family: 'GoodTimes';
+            text-transform: uppercase;
+            @media only screen and (min-width: 968px) {
+                font-size: 32px;
+            }
+
+            @media only screen and (max-width: 968px) {
+                font-size: 24px;
+            }
+            letter-spacing: 1px;
+        }
+
+        .Description {
+            color: $TextColor;
+            max-width: 70ch;
+            margin: auto;
+            line-height: 1.8em;
+        }
+
+        .Attributes {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            @media only screen and (max-width: 968px) {
+                flex-direction: column;
+            }
+            .Attribute {
+                min-width: 300px;
+                min-height: 300px;
+                margin: 0 20px;
+                @include BorderRadius(10px);
+                background: $BoxColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    color: $MainTextColor;
+                }
+            }
+        }
+    }
+}

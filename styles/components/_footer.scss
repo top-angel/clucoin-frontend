@@ -1,0 +1,126 @@
+.Footer {
+  position: relative;
+  background: #151519;
+  margin-top: auto;
+  &::before {
+    @include BoxEffect;
+  }
+  p {
+    margin: 0;
+  }
+
+  .Container {
+    .FooterFlex {
+      display: grid;
+
+      @media only screen and (min-width: 968px) {
+        display: grid;
+        grid-template-areas: "a b c d e";
+        align-items: start;
+        grid-gap: 140px;
+        padding: 40px 0;
+      }
+
+      @media only screen and (max-width: 1260px) {
+        display: grid;
+        grid-template-areas:
+          "a a a a a a a a"
+          "b b b b c c c c"
+          "d d d d e e e e";
+        align-items: start;
+        grid-gap: 20px;
+        padding: 40px 0;
+      }
+
+      @media only screen and (max-width: 968px) {
+        display: grid;
+        grid-template-areas:
+          "a a a a a a a a"
+          "b b b b c c c c"
+          "d d d d e e e e";
+        align-items: start;
+        grid-gap: 20px;
+        padding: 40px 0;
+      }
+
+      @media only screen and (max-width: 568px) {
+        display: grid;
+        grid-template-areas:
+          "a a a a a a a a"
+          "b b b b c c c c"
+          "d d d d e e e e";
+        align-items: start;
+        grid-gap: 20px;
+        padding: 20px 0;
+      }
+
+      padding: 20px 0;
+      grid-gap: 20px;
+
+      .FooterCol {
+        .FooterTitle {
+          font-size: 16px;
+          font-weight: bold;
+          color: $MainTextColor;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+
+        img {
+        }
+
+        .Description {
+          .FooterDescription {
+            margin-top: 20px;
+            line-height: 1.8;
+          }
+
+          .SocialMedia {
+          }
+        }
+
+        .FooterNav {
+          .FooterNavList {
+            padding-inline-start: 0;
+
+            .FooterList {
+              list-style-type: none;
+
+              .FooterLink {
+                color: $TextColor;
+                text-decoration: none;
+                margin-bottom: 10px;
+                display: block;
+                cursor: pointer;
+
+                &:hover {
+                  color: #fefefe;
+                }
+              }
+            }
+          }
+        }
+      }
+      .FCol1 {
+        grid-area: a;
+      }
+      .FCol2 {
+        grid-area: b;
+      }
+      .FCol3 {
+        grid-area: c;
+      }
+      .FCol4 {
+        grid-area: d;
+      }
+      .FCol5 {
+        grid-area: e;
+      }
+    }
+  }
+
+  .CopyrightText {
+    padding-bottom: 20px;
+    color: $MainTextColor;
+  }
+}

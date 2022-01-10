@@ -1,0 +1,316 @@
+.BlogsBody {
+  padding: 20px;
+  @include BorderRadius(20px);
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+  &::before {
+    @include BoxEffect;
+  }
+
+  .BlogsHeader {
+    text-align: center;
+
+    .BlogsTitle {
+      font-family: "GoodTimes";
+      font-size: 52px;
+      color: #ef008e;
+    }
+
+    .BlogsDescription {
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
+
+  .BlogsPosted {
+    display: grid;
+
+    @media only screen and (min-width: 968px) {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 20px;
+    }
+
+    @media only screen and (min-width: 1168px) {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 65px;
+    }
+
+    @media only screen and (max-width: 968px) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 40px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 20px;
+    }
+
+    @media only screen and (max-width: 525px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0;
+    }
+
+    grid-gap: 20px;
+    justify-items: stretch;
+
+    .Blog {
+      border-radius: 25px;
+      border: 1px solid #3a3c44;
+      background-color: #1e1f24;
+      text-decoration: none;
+      color: inherit;
+
+      .BlogImage {
+        height: 200px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 25px 25px 0 0;
+        }
+      }
+
+      .BlogDescription {
+        padding: 20px;
+
+        p {
+          margin: 0;
+        }
+
+        .BlogTitle {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .BlogAboutDescription {
+          margin: 20px 0;
+          font-size: 14px;
+          color: #ffffff;
+        }
+
+        .BlogPostedDate {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .BlogLarge {
+      @media only screen and (min-width: 968px) {
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        min-height: 250px;
+      }
+
+      .BlogImage {
+        @media only screen and (min-width: 968px) {
+          flex: 40%;
+          height: 100%;
+
+          img {
+            border-radius: 25px 0 0 25px;
+          }
+        }
+      }
+
+      .BlogDescription {
+        @media only screen and (min-width: 968px) {
+          flex: 60%;
+          padding: 0 20px;
+        }
+
+        .BlogTitle {
+          @media only screen and (min-width: 968px) {
+            font-size: 18px;
+          }
+        }
+
+        .BlogAboutDescription {
+          @media only screen and (min-width: 968px) {
+            margin: 24px 0;
+            font-size: 16px;
+            color: #ffffff;
+          }
+        }
+
+        .BlogPostedDate {
+          @media only screen and (min-width: 968px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Blog {
+  @include BorderRadius(20px);
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+  &::before {
+    @include BoxEffect;
+  }
+
+  .BlogHeader {
+    height: 300px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 25px 25px 0 0;
+    }
+  }
+
+  .BlogDescription {
+    padding: 40px 40px 20px;
+
+    p {
+      margin: 0;
+    }
+
+    .BlogDescriptionHeader {
+      margin-bottom: 20px;
+
+      .BlogTitle {
+        font-family: "GoodTimes";
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+        color: #ef008e;
+        margin: 0;
+      }
+
+      .BlogDate {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;
+        margin-top: 5px;
+      }
+    }
+
+    .BlogDescriptionContent {
+      p {
+        line-height: 1.6em;
+        margin-bottom: 20px;
+      }
+    }
+
+    .share-title {
+      font-size: 16px;
+
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .socials {
+      display: flex;
+      grid-gap: 15px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+
+      .social-item {
+        font-size: 17px;
+        color: rgba(101, 101, 114);
+        transition: color 250ms linear;
+
+        &:hover {
+          color: $MainColor;
+        }
+      }
+    }
+  }
+
+  .BlogFooter {
+    background: #141417;
+    padding: 20px;
+    border-top: 1px solid #1d1d21;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 25px 25px;
+
+    .PostedBy {
+      display: flex;
+      align-items: center;
+
+      .Avatar {
+        img {
+          max-width: 48px;
+          border-radius: 50%;
+        }
+      }
+
+      .Description {
+        margin-left: 20px;
+
+        p {
+          margin: 0;
+        }
+
+        .PostedByName {
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+
+        .AuthorName {
+          font-size: 16px;
+          color: #ef008e;
+        }
+      }
+    }
+
+    .BackToBlogs {
+      @media only screen and (max-width: 425px) {
+        margin-top: 10px;
+      }
+      .BackBtn {
+        color: #ffffff;
+        background: rgba(255, 0, 140, 0.2);
+        border: 2px solid #ef008e;
+        color: #ff50b8;
+        padding: 8px 32px;
+        border-radius: 40px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 30px;
+      margin: 20px 20px 30px;
+
+      .BackToBlogs {
+        flex: 1;
+        width: 100%;
+
+        .BackBtn {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      .PostedBy {
+        .Description {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

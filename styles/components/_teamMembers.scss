@@ -1,0 +1,107 @@
+.OurTeamTitle {
+  text-align: center;
+  font-family: "GoodTimes";
+  font-size: $Big_GoodTimes_FontSize;
+  color: $MainTextColor;
+  margin-top: 80px;
+  margin-bottom: 0;
+  @media only screen and (max-width: 968px) {
+    margin-top: 40px;
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+}
+.OurTeam {
+  display: grid;
+  grid-gap: 80px;
+  margin: 80px 0;
+  @media only screen and (min-width: 320px) {
+    margin: 30px 0;
+    grid-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media only screen and (min-width: 350px) {
+    margin: 30px 0;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 668px) {
+    grid-gap: 40px;
+    margin: 40px 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 968px) {
+    margin: 60px 0;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media only screen and (min-width: 1360px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .TeamMember {
+    text-align: center;
+    .TeamMemberHeader {
+      height: 222px;
+      max-width: 260px;
+      background: $BoxColor;
+      border: 1px solid $BorderColor;
+      margin-bottom: 12.5px;
+      border-radius: 20px;
+      margin: auto;
+      margin-bottom: 15px;
+      background-size: cover !important;
+      @media only screen and (max-width: 468px) {
+        height: 140px;
+      }
+    }
+    .TeamMemberDescription {
+      p {
+        margin: 0;
+      }
+      .MemberTitle {
+        color: $MainTextColor;
+        font-family: "GoodTimes";
+        font-size: $Medium_GoodTimes_20PX;
+        margin-bottom: 8px;
+        @media only screen and (max-width: 468px) {
+          font-size: 14px;
+          margin-bottom: 2px;
+        }
+      }
+      .MemberDescription {
+        font-size: $Big_OpenSans_FontSize;
+        font-weight: 400;
+        @media only screen and (max-width: 468px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .DnpProfile {
+    background: url(/assets/team/DNP3.jpg) no-repeat 100% !important;
+  }
+  .DogProfile {
+    background: url(/assets/team/DOG.jpg) no-repeat 100% !important;
+  }
+  .PogoProfile {
+    background: url(/assets/team/POGO.jpg) no-repeat 100% !important;
+  }
+  .MattProfile {
+    background: url(/assets/team/MATT.jpg) no-repeat 100% !important;
+  }
+  .DrewProfile {
+    background: url(/assets/team/DREW.jpg) no-repeat 100% !important;
+  }
+  .SylteProfile {
+    background: url(/assets/team/SYLTE.jpg) no-repeat 100% !important;
+  }
+  .JennehProfile {
+    background: url(/assets/team/JENNEH.jpg) no-repeat 100% !important;
+  }
+  .FortiganProfile {
+    background: url(/assets/team/FORTIGAN.jpg) no-repeat 100% !important;
+  }
+}

@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "GoodTimes";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url("/assets/fonts/GoodTimes.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url("/assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url("/assets/fonts/OpenSans-Bold.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "OpenSans", sans-serif;
+  font-size: 15px;
+  line-height: 1.5em;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  text-rendering: optimizeSpeed;
+  background: $BodyBackground;
+  color: $TextColor;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container {
+  max-width: 1360px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
+  position: relative;
+}
+
+.toast-container {
+  z-index: 999999 !important;
+  top: 80px !important;
+}
+
+/*.BodyArrow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(/assets/BodyArrow.svg);
+    background-repeat: no-repeat;
+    background-position-y: 68%;
+    background-position-x: center;
+    opacity: 0.03;
+}*/
+
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: $MainColor;
+}
+::-webkit-scrollbar-track {
+  background: $BoxColor;
+}
+
+.markdown {
+  a {
+    // color: #81a9ff;
+    color: $MainColor;
+    text-decoration: none;
+  }
+
+  pre {
+    background: #1e2029;
+    padding: 15px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  ul,
+  ol {
+    padding-left: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  blockquote {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc((1em + 20px) * -1);
+      width: 5px;
+      background: #242731;
+      height: 100%;
+    }
+  }
+}
+
+.Error404,
+.NotFoundError,
+.NotFoundText {
+  margin: 0;
+  display: block;
+}
+
+.Error404 {
+  font-size: 52px;
+  color: $MainTextColor;
+}
+.NotFoundError {
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.NotFoundText {
+  margin-top: 40px;
+}
+
+.spinner {
+  height: 12px;
+  width: 12px;
+
+  color: white;
+}
+
+.animate-spin {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

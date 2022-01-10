@@ -1,0 +1,359 @@
+.quests-title {
+  font-family: "GoodTimes";
+  font-weight: normal;
+  font-size: 52px;
+  text-align: center;
+
+  color: $MainColor;
+}
+
+.quests-description {
+  font-family: "OpenSans";
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.seasons-container {
+  background-color: #151519;
+  margin: 0 25px 30px;
+  max-width: 1248px;
+
+  padding: 0 15px 25px;
+
+  border-radius: 27px;
+
+  .season-info {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    margin: 0 auto;
+    width: fit-content;
+
+    min-height: 37px;
+    background: #2b1325;
+    border: 1px solid #ff008c;
+
+    &::before {
+      content: "*";
+      align-self: flex-start;
+      color: #ff008c;
+    }
+  }
+
+  .countdown {
+    color: white;
+    text-align: center;
+    margin: 3px auto;
+  }
+
+  .seasons-list {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: auto;
+
+    span {
+      cursor: pointer;
+      padding: 0.75rem 1.25rem;
+      font-family: "OpenSans";
+      font-weight: 600;
+      color: #676679;
+
+      &.selected {
+        color: white;
+      }
+    }
+  }
+
+  .progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    width: 350px;
+    margin-right: 15px;
+
+    @media screen and (max-width: 900px) {
+      width: 300px;
+    }
+
+    @media screen and (max-width: 790px) {
+      width: 250px;
+    }
+
+    height: 36px;
+    overflow: hidden;
+    border-radius: 27px;
+    background-color: #2b1325;
+    border: 1px solid #ff008c;
+
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      font-family: "Open Sans";
+
+      z-index: 2;
+      color: white;
+      position: relative;
+    }
+
+    .bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      margin: -1px;
+      border: 1px solid #ff008c;
+      background-color: rgb(239, 0, 142, 0.5);
+
+      border-radius: 27px;
+    }
+  }
+
+  .quests-container {
+    padding: 0 25px;
+
+    .quests-list {
+      display: grid;
+      margin: 20px auto;
+      grid-gap: 25px;
+
+      justify-items: center;
+      grid-template-columns: repeat(4, 1fr);
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media screen and (max-width: 810px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media screen and (max-width: 580px) {
+        grid-template-columns: 1fr;
+      }
+
+      .quest {
+        width: fit-content;
+        text-align: center;
+
+        border-radius: 25px;
+        padding-bottom: 10px;
+        border: 1px solid #7b7998;
+        background-color: #1e1f24;
+
+        .progress {
+          margin: 5px 10px 0;
+          flex-grow: 1;
+          max-width: 100%;
+          width: auto;
+          height: 25px;
+
+          span {
+            font-size: 14px;
+            font-family: "Open Sans";
+          }
+        }
+
+        .title,
+        h6 {
+          margin: 0;
+          text-align: center;
+
+          cursor: pointer;
+          font-family: "OpenSans";
+          font-weight: 700;
+        }
+
+        .title {
+          color: white;
+          font-size: 18px;
+        }
+
+        h6 {
+          color: $MainColor;
+          font-size: 14px;
+        }
+
+        .limit {
+          color: #9795ad;
+
+          font-family: "Open Sans";
+          font-size: 13px;
+          font-weight: 700;
+
+          .available {
+            color: #00c767;
+          }
+        }
+
+        .image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 200px;
+          height: 200px;
+          cursor: pointer;
+          overflow: hidden;
+          margin: -1px;
+          margin-bottom: 7px;
+          // position: relative;
+          border-radius: 25px;
+          border: $MainColor 0px solid;
+          transition: border 0.2s linear;
+
+          img {
+            opacity: 0.5;
+            max-width: 100%;
+            object-fit: cover;
+            width: max-content;
+            height: max-content;
+
+            min-height: 100%;
+
+            border-radius: 25px;
+            transition: opacity 0.2s linear;
+          }
+        }
+
+        &.selected {
+          .image {
+            border-width: 2px;
+            img {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .tasks-list {
+      border-radius: 27px;
+      background-color: #151519;
+      border: 1px solid #3e3e42;
+
+      padding-bottom: 25px;
+
+      .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid #3e3e42;
+
+        padding: 10px 50px;
+
+        @media screen and (max-width: 550px) {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        position: relative;
+
+        .quest-name {
+          font-family: "OpenSans";
+          font-weight: 600;
+          color: white;
+          size: 18px;
+          flex-grow: 1;
+          line-height: 24px;
+
+          margin: 5px 0 0;
+        }
+
+        svg {
+          cursor: pointer;
+        }
+
+        @media screen and (max-width: 750px) {
+          border: none;
+          margin: 5px 15px;
+
+          .progress {
+            display: inline;
+            position: absolute;
+            border-width: 1.7px;
+            width: calc(100% - 1px);
+
+            left: 0;
+            bottom: -9px;
+            height: 13px;
+            margin-right: 1px;
+
+            span {
+              display: none;
+            }
+
+            .bar {
+              margin: -1px;
+              height: 14px;
+              border-width: 1.7px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+
+      .task {
+        border-bottom: 1px solid #3e3e42;
+        color: white;
+
+        font-family: "OpenSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+
+        padding: 15px 50px;
+
+        margin-left: -1px;
+        margin-right: -1px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        grid-gap: 5px;
+
+        @media screen and (max-width: 550px) {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        span {
+          width: 20px;
+          height: 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          border-radius: 0 0 26px 26px;
+          margin-bottom: -26px;
+        }
+
+        &.finished {
+          background-color: #2b1325;
+          border: 1px solid $MainColor;
+        }
+      }
+    }
+  }
+}

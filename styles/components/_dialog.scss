@@ -1,0 +1,69 @@
+.dialog {
+  position: fixed;
+  z-index: 99999;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
+  pointer-events: none;
+
+  * {
+    pointer-events: all;
+  }
+}
+
+/* ------------------------ */
+
+.changes-modal {
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 10px;
+
+  .modal {
+    border: 1px solid #ff008c;
+    background: #2b1325;
+    border-radius: 27px;
+    padding: 0 25px;
+    height: 66px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span,
+    .buttons > button {
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .buttons {
+      display: flex;
+      grid-gap: 15px;
+
+      .reset-button {
+        cursor: pointer;
+
+        border: none;
+        background: transparent;
+      }
+    }
+
+    @media screen and (max-width: 570px) {
+      justify-content: center;
+
+      span {
+        top: -50%;
+        position: absolute;
+      }
+    }
+  }
+}

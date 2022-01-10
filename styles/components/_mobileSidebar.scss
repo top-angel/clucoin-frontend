@@ -1,0 +1,110 @@
+.bodyOpened {
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: rgba(0, 0, 0, 0.8);
+    filter: blur(5px);
+    z-index: 50000;
+  }
+}
+
+.HideBottomMenu {
+  display: none;
+}
+
+.MobileSideBar {
+  position: fixed;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000000;
+  right: -320px;
+  @include Transitions(ease-out);
+  overflow: auto;
+
+  scrollbar-width: none;
+
+  .MobileSideBarNavigationList {
+    padding-inline-start: 0;
+    list-style: none;
+
+    .NavigationSubList {
+      margin-bottom: 20px;
+
+      a {
+        text-decoration: none !important;
+      }
+
+      .NavigationLink {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        border-radius: 5px;
+        color: $MainTextColor;
+        text-align: center;
+      }
+      .DropDownBox {
+        text-align: center;
+        padding: 20px 0;
+        .DropDownToggleMenuBtn {
+          color: #cfcee6;
+          font-weight: bold;
+          font-size: 14px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          svg {
+            margin-left: 10px;
+          }
+        }
+        .DropDownMenu {
+          display: none;
+          list-style-type: none;
+          padding-inline-start: 0;
+          margin-top: 30px;
+          .DropDownList {
+            margin-bottom: 30px;
+            .DropDownLink {
+              text-decoration: none;
+              color: #cfcee6;
+            }
+            &:last-child {
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+      .DropDownActive {
+        background: rgba(255, 0, 140, 0.2);
+        border: 2px solid rgb(255, 0, 140, 62%);
+        .DropDownMenu {
+          display: block;
+        }
+      }
+      .ConnectButton {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.CloseSideBarButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: $MainColor;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: block;
+}
+
+.MenuToggled {
+  right: 0;
+}

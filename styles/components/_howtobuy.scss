@@ -1,0 +1,186 @@
+.HowToBuy {
+    padding: 20px;
+    @include BorderRadius(20px);
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+    &::before {
+        @include BoxEffect;
+    }
+
+    @media only screen and (min-width: 968px) {
+        margin-bottom: 60px;
+        margin-top: 250px;
+        padding-top: 170px;
+    }
+
+    .HtbVideo {
+        @media only screen and (min-width: 968px) {
+            width: 550px;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translate(-50%);
+            transform: translateX(-50%);
+            bottom: 0;
+            top: -100%;
+        }
+
+        @media only screen and (max-width: 968px) {
+            width: 425px;
+        }
+
+        @media only screen and (max-width: 468px) {
+            width: 320px;
+        }
+
+        margin: auto;
+        display: block;
+        @include BorderRadius(10px);
+        cursor: pointer;
+        @include Transitions(ease-out);
+    }
+
+    .Paused {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .Running {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .Title {
+        font-family: "GoodTimes";
+        text-align: center;
+        @media only screen and (min-width: 1080px) {
+            font-size: 52px;
+        }
+
+        @media only screen and (max-width: 568px) {
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        color: $MainTextColor;
+
+        span {
+            color: $MainColor;
+        }
+    }
+
+    .BuyBody {
+        margin: auto;
+        max-width: 785px;
+        font-size: 14px;
+        .BuyOrderedList {
+            padding-inline-start: 20px;
+
+            .BuyList {
+                &::marker {
+                    color: $MainTextColor;
+                    font-weight: bold;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    color: $MainTextColor;
+                    .HighlightText {
+                        font-weight: bold;
+                        color: $MainTextColor;
+                    }
+
+                    .Badge {
+                        color: $MainTextColor;
+                        background: $MainColor;
+                        padding: 2px 7px;
+                        border-radius: 8px;
+                        margin: 0 5px;
+                    }
+                }
+
+                .IdBox {
+                    padding: 2px 7px;
+                    border-radius: 8px;
+                    color: $MainTextColor;
+                    background: $MainColor;
+                    display: inline-block;
+                    cursor: pointer;
+                    position: relative;
+
+                    @media only screen and (max-width: 968px) {
+                        font-size: 14px;
+                    }
+
+                    span {
+                        position: absolute;
+                        right: 0;
+                        opacity: 0;
+                        display: none;
+                    }
+
+                    @media only screen and (min-width: 968px) {
+                        &:hover span {
+                            display: block;
+                            opacity: 1;
+                            right: -130px;
+                        }
+
+                        span {
+                            right: -20px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            @include Transitions(ease-out);
+                            background: $BodyBackground;
+                            color: $MainColor;
+                            user-select: none;
+                            pointer-events: none;
+                            z-index: 1;
+                            display: block;
+                            padding: 5px 10px;
+                            @include BorderRadius(48px);
+                        }
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .TabBuy {
+        display: none;
+    }
+    .TabBuyShow {
+        display: block !important;
+    }
+    .BuyTabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        button {
+            padding: 11px 48px;
+            text-align: center;
+            background: $BodyBackground;
+            border: 1px solid #7B7998;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .ActiveTab {
+            background: #2B1325;
+            border: 1px solid #FF008C;
+        }
+    }
+    
+}

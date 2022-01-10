@@ -1,0 +1,273 @@
+.RoadMapPage {
+    margin: 40px 0;
+}
+.RoadMapTitle {
+    font-family: "GoodTimes";
+    font-size: $Big_GoodTimes_FontSize;
+    display: block;
+    margin: 0;
+    text-align: center;
+    color: $MainTextColor;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @media only screen and (max-width: 968px) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+}
+
+.RoadMap {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+    margin-bottom: 0;
+
+    &:before {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 3px;
+        background-color: $MainColor;
+        left: 50%;
+        margin-left: -1.5px;
+    }
+    >li {
+        margin-bottom: 30px;
+        position: relative;
+        width: 50%;
+        float: left;
+        clear: left;
+
+        &:before {
+            content: " ";
+            display: table;
+        }
+
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+
+        >.RoadMapPanel {
+            width: 82%;
+            float: left;
+            border: 1px solid $BorderColor;
+            border-radius: 20px;
+            background: $BoxColor;
+            position: relative;
+            -webkit-box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+
+            // &:before {
+            //     position: absolute;
+            //     top: 26px;
+            //     right: -13px;
+            //     display: inline-block;
+            //     border-top: 12px solid transparent;
+            //     border-left: 12px solid $BorderColor;
+            //     border-right: 0 solid $BorderColor;
+            //     border-bottom: 12px solid transparent;
+            //     content: " ";
+            // }
+
+            // &:after {
+            //     position: absolute;
+            //     top: 27px;
+            //     right: -11px;
+            //     display: inline-block;
+            //     border-top: 11px solid transparent;
+            //     border-left: 11px solid $BoxColor;
+            //     border-right: 0 solid $BoxColor;
+            //     border-bottom: 11px solid transparent;
+            //     content: " ";
+            // }
+
+            .RoadMapHeader {
+                font-family: "GoodTimes";
+                color: $MainTextColor;
+                font-size: $Small_GoodTimes_FontSize;
+                @media only screen and (max-width: 475px) {
+                    text-align: center;
+                }  
+            }
+        }
+
+        >.MapCircle {
+            width: 24px;
+            height: 24px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 19px;
+            right: -12px;
+            z-index: 1;
+            background: $MainColor;
+            border-radius: 50%;
+        }
+
+        &:nth-child(2) {
+            margin-top: 60px;
+        }
+    }
+
+    >li.MapInverted {
+        >.RoadMapPanel {
+            float: right;
+
+            &:before {
+                border-left-width: 0;
+                border-right-width: 12px;
+                left: -13px;
+                right: auto;
+            }
+
+            &:after {
+                border-left-width: 0;
+                border-right-width: 11px;
+                left: -11px;
+                right: auto;
+            }
+        }
+
+        float: right;
+        clear: right;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        >.MapCircle {
+            left: -12px;
+        }
+    }        
+}
+
+.RoadMapBody {
+    >p {
+        padding: 20px;
+        margin-bottom: 0;
+
+        + {
+            p {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    >ul {
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .RoadMapAchievements {
+        .Achievement {
+            .AchievementIcon {
+                color: $SuccessColor;
+                font-size: 16px;
+            }
+            .AchievementDescription {
+                @keyframes glow {
+                    from {
+                        filter: drop-shadow(0px 0px 0px $Orange);
+                    }
+                    to {
+                        filter: drop-shadow(0px 0px 5px $Orange);
+                    }
+                  }
+                .AchievementTitle {
+                    font-family: "GoodTimes";
+                    color: $MainColor;
+                    font-size: $Small_GoodTimes_FontSize;
+                    margin: 6px 0;
+                    .fa-check {
+                        color: $SuccessColor;
+                    }
+                    .fa-dot-circle {
+                        animation: glow 1s infinite alternate;
+                        color: #FF6F50;
+                    }
+                }
+                .AchievementList {
+                    list-style-type: none;
+                    @media only screen and (max-width: 468px) {
+                        padding-inline-start: 0;
+                    }
+                    li {
+                        p {
+                            margin:0;
+                            margin-bottom: 2.5px;
+                            @media only screen and (max-width: 475px) {
+                                margin-bottom: 7.5px;
+                                font-size: 14px;
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    ul.RoadMap {
+        &:before {
+            left: 20px;
+        }
+
+        >li {
+            margin-bottom: 25px;
+            position: relative;
+            width: 100%;
+            float: left;
+            clear: left;
+
+            >.RoadMapPanel {
+                width: calc(100% - 46px);
+                width: -moz-calc(100% - 46px);
+                width: -webkit-calc(100% - 46px);
+                float: right;
+
+                &:before {
+                    border-left-width: 0;
+                    border-right-width: 13px;
+                    left: -13px;
+                    right: auto;
+                }
+
+                &:after {
+                    border-left-width: 0;
+                    border-right-width: 11px;
+                    left: -11px;
+                    right: auto;
+                }
+            }
+
+            >.MapCircle {
+                left: 8px;
+                margin-left: 0;
+                top: 18px;
+            }
+        }
+    }
+
+    .RoadMap {
+        >li.MapInverted {
+            float: left;
+            clear: left;
+            margin-top: 0px;
+            margin-bottom: 25px;
+
+            >.MapCircle {
+                left: 8px;
+            }
+        }
+    }
+}

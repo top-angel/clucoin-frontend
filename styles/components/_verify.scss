@@ -1,0 +1,30 @@
+.verify {
+  height: 40px;
+  background: #2b1325;
+
+  border-top: 1px solid #ff008c;
+  border-bottom: 1px solid #ff008c;
+
+  div {
+    display: flex;
+    grid-gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    p,
+    .button {
+      font-family: "Open Sans";
+      padding: 0;
+      margin: 0;
+    }
+
+    .button {
+      padding: 0;
+      background: none;
+      font-weight: 600;
+      min-width: max-content;
+    }
+  }
+}
